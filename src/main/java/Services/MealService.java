@@ -13,6 +13,13 @@ public class MealService {
     @Autowired
     MealRepository mealRepository;
 
+    public Meal createMeal(Meal meal){
+        return mealRepository.save(meal);
+    }
+    public void deleteMealById(int id){
+        mealRepository.deleteById(id);
+    }
+
     public List<Meal> getMealsBySection(int section_id){
         return mealRepository.findMealsBySectionId(section_id);
     }
